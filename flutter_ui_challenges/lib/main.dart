@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/screens/home.screen.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,12 +10,15 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter UI Challenge Day 0#',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        backgroundColor: Color(0xFF3A9EC1),
+        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme).apply(bodyColor: Colors.black),
       ),
-      home: Scaffold(),
+      home: SafeArea(
+        child: HomeScreen(),
+      ),
     );
   }
 }
